@@ -1,0 +1,26 @@
+apiVersion: 2019-12-01
+location: westeurope
+name: d-azure-pipeline-agents-01
+properties:
+  containers:
+  - name: azure-pipeline-agents
+    properties:
+      image: vikiregistry01.azurecr.io/ubuntu-terraform-azp-agent:1.0.0
+      environmentVariables:
+      - name: AZP_URL
+        value: https://dev.azure.com/vikaspandey0622
+      - name: AZP_TOKEN
+        secureValue: <<replace-your-pat-here>>
+      - name: AZP_AGENT_NAME
+        value: ubuntu-terraform-azp-agent
+      resources:
+        requests:
+          cpu: 1
+          memoryInGb: 1.5
+  osType: Linux
+  imageRegistryCredentials:
+  - server: vikiregistry01.azurecr.io
+    username: vikiregistry01
+    password: <<replace-your-password-here>>
+tags: {Project: Demo}
+type: Microsoft.ContainerInstance/containerGroups
