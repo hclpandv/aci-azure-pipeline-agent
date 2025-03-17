@@ -7,7 +7,7 @@ Azure pipeline agents hosted as Azure Container Instances
 https://medium.com/israeli-tech-radar/running-azure-pipeline-agent-in-a-container-instance-6ee7238c69b2  
 
 
-## Fixe issue: Failed to delete a virtual network or subnet used by Azure Container Instances due to delegation
+## Fixe issue: Failed to delete a subnet used by Azure Container Instances due to delegation
 
 ```bash
 RESOURCE_GROUP="my_network_rg"
